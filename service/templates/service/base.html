@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/my.css' %}">
+    <link rel="stylesheet" id="css-preset" href="{% static 'index/css/presets/preset1.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/responsive.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="{% static 'index/images/logo.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'index/css/style-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/media-queries.css' %}">
+    <link rel="stylesheet" href="{% static 'service/my.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Yazılım</title>
+    {% block head %}{% endblock head %}
+<style>
+
+</style>
+</head>
+
+<body class="">
+    <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+  <!--/.preloader-->
+
+  <header id="home">
+    
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://{{ request.get_host }}">
+            <h1><img class="img-responsive" width="50" src="{% static 'index/images/logo.png' %}" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="http://{{ request.get_host }}">Anasayfa</a></li>
+            <li class="scroll"><a href="http://{{ request.get_host }}">Hizmetler</a></li> 
+            <li class="scroll"><a href="http://{{ request.get_host }}">Hakkımızda</a></li>                     
+            <li class="scroll"><a href="http://{{ request.get_host }}">Portfolyomuz</a></li>
+            <li class="scroll"><a href="http://{{ request.get_host }}">Ekibimiz</a></li>
+            <li class="scroll"><a href="http://{{ request.get_host }}">Blog</a></li>
+            <li class="scroll"><a href="http://{{ request.get_host }}">İletişim</a></li>       
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+
+<div class="container montserrat-regular" id="service-detail-container">
+    <br><br>
+    {% block elements %}
+    <div class="row grad-purple">
+        <div class="col-md-6">
+            <span class="title">Lorem Ipsum</span><br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius cum culpa facilis non, facere et ex molestias voluptatem veniam laboriosam pariatur ea aliquid, perspiciatis omnis magnam aperiam
+            fugiat dicta inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis quibusdam.
+
+        </div>
+        <div class="col-md-6" style="text-align: center;">
+            <br>
+            <img class="img-responsive" style="max-width: 200px; margin: auto;" src="/Users/berkayceylan/Projeler/case_yazılım/Resimler/example-2.png" alt="">
+        </div>
+    </div><br>
+    <div class="row ">
+        <div class="col-md-6" style="text-align: center;">
+            <br>
+            <img class="img-responsive" style="max-width: 200px; margin: auto;" src="/Users/berkayceylan/Projeler/case_yazılım/Resimler/example-2.png" alt="">
+        </div>
+        <div class="col-md-6">
+            <span class="title">Lorem Ipsum</span><br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius cum culpa facilis non, facere et ex molestias voluptatem veniam laboriosam pariatur ea aliquid, perspiciatis omnis magnam aperiam
+            fugiat dicta inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis quibusdam.
+
+        </div>
+
+    </div><br>
+    <div class="row grad-purple">
+        <div class="col-md-6 y">
+            <span class="title">Lorem Ipsum</span><br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius cum culpa facilis non, facere et ex molestias voluptatem veniam laboriosam pariatur ea aliquid, perspiciatis omnis magnam aperiam
+            fugiat dicta inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis quibusdam.
+
+        </div>
+        <div class="col-md-6" style="text-align: center;">
+            <br>
+            <img class="img-responsive" style="max-width: 200px; margin: auto;" src="/Users/berkayceylan/Projeler/case_yazılım/Resimler/example-2.png" alt="">
+        </div>
+    </div> 
+    {% endblock elements %}
+    </div> <br>
+    
+    <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 footer-about wow fadeInUp">
+                <img class="logo-footer" src="{% static 'index/images/cy-ana-logo-light.png' %} " alt="logo-footer" data-at2x="images/cy-ana-logo-light.png">
+                <p>
+                  Case Yazılım Olarak 2020'den itibaren genç ve dinamik bir ekiple hayallerinizdeki yazılımı gerçeğe dönüştürüyoruz.
+                </p>
+                <div class="col-md-6 footer-copyright">
+                &copy; <a href="https://caseyazilim.com">Case Yazılım</a>
+              </div>
+              </div>
+              <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+                <h3>İletişim</h3>
+                <p><i class="fa fa-compass"></i> Akçalar Mah. Kaptan Sok. (660) No:20 Kat:1 Daire:3 Nilüfer / Bursa </p>
+                <p><i class="fa fa-phone"></i>Telefon: <a href="https://api.whatsapp.com/send?l=tr&phone=+905396504279">(90) 539 650 42 79</a></p>
+                <p><i class="fa fa-location-arrow"></i> Email: <a href="mailto:info@caseyazilim.com">info@caseyazilim.com</a></p>
+              </div>
+    
+              <div class="col-md-3 footer-links wow fadeInUp">
+                <h3>Bağlantılar</h3>
+    
+                <p><a href="https://caseyazilim.com/gizlilik.html">Gizlilik Politikamız</a> </p>
+                <p><a href="https://caseyazilim.com/kullanim_kosullari.html">Kullanım Koşulları</a> </p>
+                <p><a href="https://caseyazilim.com/destek.html">Destek</a> </p>
+                <p><a href="https://caseyazilim.com/sikca_sorulan_sorular.html">Sıkça Sorulan Sorular</a> </p>
+                <p><a href="https://caseyazilim.com/ozel_kurumsal_hizmet.html">Özel ve Kurumsal Hizmet</a></p>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social-icons" style="background-color: #333;margin: 0;padding-bottom:30px">
+                <ul>
+                  <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="instagram" target="_blank" href="https://instagram.com/caseyazilim"><i class="fa fa-instagram"></i></a></li>
+                  <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="facebook" href="https://www.facebook.com/Caseyaz%C4%B1l%C4%B1m-102123805684629"><i class="fa fa-facebook"></i></a></li>
+                  <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="linkedin" target="_blank" href="https://www.linkedin.com/company/case-yazilim"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+    
+              </div>
+    
+      </footer>
+    <script type="text/javascript" src="{% static 'index/js/jquery.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="{% static 'index/js/jquery.inview.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/wow.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/mousescroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/smoothscroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/jquery.countTo.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/lightbox.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/main.js'%}"></script>
+</body>
+
+</html>

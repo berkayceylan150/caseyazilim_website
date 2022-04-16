@@ -1,0 +1,76 @@
+{% extends 'service/base.html' %}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block elements %}
+    
+    {% for element in object_list %}
+    {% if forloop.first %}
+        <h3 style="font-size:26px; font-weight: bold; text-align: center;">{{ element.service }}</h3><br><br>
+    {% endif %}
+    
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="row white" style="color: #000">
+                <div class="col-md-6 img" style="text-align: center;">
+                    <br>
+                    <img class="img-responsive" style="max-width: 300px; margin: auto;" src="{{ element.image_field.image.url }}" alt="">
+                </div>
+                <div class="col-md-6 title-text">
+                    <span class="title">{{ element.element_title }}</span><br><br> 
+                    {{ element.element_detail }}
+                </div>
+        
+            </div><br>
+
+        {% else %}
+            <div class="row grad-purple" >
+                <div class="col-md-6 title-text">
+                    <p>
+                        <span class="title">{{ element.element_title }}</span><br><br> 
+                        {{ element.element_detail }}
+                    </p>
+                </div>
+                <div class="col-md-6 img" style="text-align: center;">
+                    <br>
+                    <img class="img-responsive" style="max-width: 300px; margin: auto;" src="{{ element.image_field.image.url }}" alt="">
+                </div>
+            </div><br>
+        {% endif %}
+
+    {% endfor %}
+    
+    {% if project_list %}
+        <h3 style="color: #028FCC;">Örnek Projelerimiz</h3><br>
+    {% endif %}
+
+    {% for project in project_list %}
+    {% if forloop.first %}<div class="w3-row-padding">{% endif %}
+        <a href="http://{{ request.get_host }}/proje/{{ project.id }}" class="">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card scale-effect">
+                    <div class="img-cover">
+                        <img style="width:100%;
+                                    position: absolute;
+                                    bottom: 0;"
+                            src="{{ project.main_image.image.url }}"
+                            alt="{{ project.name }}"
+                            style="width:100%">
+                    </div>
+                    <div class="w3-container">
+                        <h3 style="font-size: 18px">{{ project.name }}</h3>
+                        <p>{{ project.service.service_name }}</p>
+                        <p><button style="background-color: #028FCC; color: white;" class="w3-button main-bg-color w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                    
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="w3-row-padding" style="margin-top:15px">
+        {% endif %}
+        {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+{% endblock elements %}

@@ -1,0 +1,113 @@
+.scale-effect {
+    transition: all 600ms;
+}
+
+.scale-effect:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.montserrat-regular {
+    /* Montserrat Regular = 400 */
+    font-weight: 500;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+}
+
+.title {
+    font-weight: 600;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 20pt;
+}
+
+.grad-yellow {
+    /* background: rgb(2, 0, 36); */
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+    background: linear-gradient(270deg, #B4F759, #527757);
+    color: white;
+    padding: 20px;
+}
+
+.grad-blue {
+    background: linear-gradient(270deg, #073598, #1B1464);
+    color: white;
+    padding: 20px;
+}
+
+.grad-purple {
+    background: linear-gradient(270deg, #93278F, #200554);
+    color: white;
+    padding: 20px;
+}
+
+.montserrat-regular .row {
+    border-radius: 15px;
+    padding: 30px 20px;
+    min-height: 250px;
+    position: relative;
+}
+
+@media only screen and (min-device-width: 1000px) {
+    #service-detail-container .row.white .title-text {
+        right: 10px;
+    }
+    #service-detail-container .row .title-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #service-detail-container .row.grad-purple .img {
+        float: right;
+    }
+    #service-detail-container .row.grad-purple .title-text {
+        position: absolute;
+    }
+}
+
+
+/* PROJECT */
+
+.our-services div.row {
+    text-align: center;
+    left: 20%;
+}
+
+.our-services div div.col-sm-3 {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 50px;
+}
+
+.w3-row-padding a .w3-col {
+    padding: 0 15px!important;
+}
+
+.w3-card,
+.w3-card button,
+.w3-card img,
+.progress,
+.progress-bar {
+    border-radius: 15px;
+}
+
+.w3-card .img-cover {
+    height: 327px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.w3-card .img-cover img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.w3-card p {
+    font-size: 14px;
+}

@@ -1,0 +1,27 @@
+{% extends 'index/blank_page.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container" style="font-size: 14pt;" >
+      <center><h2>{{ project.name }}</h2></center>
+      <img src="{{ project.main_image.image.url }}" alt="" class="img-responsive">
+      <br>
+      <p><span style="color: red">Kullanılan Diller/Teknolojiler:</span> {{ project.language_technologies }}</p>
+      <p><span style="color: red">Özet:</span> {{ project.short_detail }}</p>
+      <hr>
+          {{ project.detail|safe }}
+        {% if project.images.all %}
+            <h3><span style="color: red">Projeye Ait Diğer Resimler</span></h3 style="font-size: inherit">
+            {% for image in project.images.all %}
+                
+            
+                <a href="{{ image.image.url }}">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="{{ image.image.url }}" class="img-responsive" width="365">
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends 'index/base.html' %}
+
+{% block head %}
+    {% if color %}
+        <style>
+            .caption .btn-start:hover, #frequently-asked-questions .collapsible, .progress-bar.progress-bar-primary, .btn-submit{
+                background: {{ color.value }};
+                color: white;
+            }
+            #home-slider .caption h1 span{
+                color: {{ color.value }};
+            }
+
+            .main-bg-color{
+                background: {{ color.value }};
+                color: white;
+            }
+            .main-color{
+                color: {{ color.value }};
+            }
+
+            .navbar-right li.active a{
+                background: {{ menu_color.value }};
+                color: white;
+            }
+            .main-nav ul li a{
+                color: {{ menu_color.value }};
+            }
+
+            .progress-bar.progress-bar-primary{
+                background: {{ progress_bar_color.value }};
+                color: white;
+            }
+        </style>
+    {% endif %}
+    
+{% endblock head %}
+
+{% block topli %}
+<li class="dropdown">
+    <a href="#services" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hizmetlerimiz <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+
+        {% for service in service_list %}
+            <li><a href="/hizmet/{{ service.id }}">{{ service.service_name }}</a></li>
+        
+        {% endfor %}
+    </ul>
+  </li>
+{% endblock topli %}
+
+{% block services %}
+    <div class="section group">
+        
+        {% for service in service_list %}
+            {% if forloop.first %}<div class="row" style="margin:0 1%">{% endif %}
+
+                    <div class="col span_1_of_3" style="background: url({{ service.bg_image.url }});background-size: cover;">
+                        <a href="/hizmet/{{ service.id }}">
+                            <div class="bg"></div>
+                            <h3 style="color: {{ service.service_color }}">{{ service.service_name }}</h3>
+                            <p style="color: #fff">{{ service.service_detail }}</p>
+                            <p></p>
+                        </a>
+                        
+                        <button onclick="window.location.href='/hizmet/{{ service.id }}'" style="background: {{ service.service_color }}" type="button" class="btn btn-primary my-btn">Detaylı Bilgi</button>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row" style="margin:0 1%">
+            {% endif %}
+            {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+    </div>
+{% endblock  %}
+
+{% block employees %}
+    {% for employee in employee_list %}
+        {% if forloop.first %}<div class="w3-row-padding">{% endif %}
+        <div class="w3-col l3 m6 w3-margin-bottom scale-effect">
+            <div class="w3-card">
+                <div class="img-cover">
+                    <img style="width:100%;
+                                position: absolute;
+                                bottom: 0;"
+                         src="{{ employee.image_path.url }}"
+                         alt="{{ employee.name }}"
+                         style="width:100%">
+                </div>
+                <div class="w3-container">
+                    <h3 style="font-size: 18px">{{ employee.name }}</h3>
+                    <p class="w3-opacity">
+                        {{ employee.title }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="w3-row-padding" style="margin-top:15px">
+        {% endif %}
+        {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+{% endblock  %}
+
+{% block projects %}
+    {% for project in project_list %}
+        {% if forloop.first %}<div class="w3-row-padding">{% endif %}
+        <a href="http://{{ request.get_host }}/proje/{{ project.id }}" class="">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card scale-effect">
+                    <div class="img-cover">
+                        <img style="width:100%;
+                                    position: absolute;
+                                    bottom: 0;"
+                            src="{{ project.main_image.image.url }}"
+                            alt="{{ project.name }}"
+                            style="width:100%">
+                    </div>
+                    <div class="w3-container">
+                        <h3 style="font-size: 18px">{{ project.name }}</h3>
+                        <p>{{ project.service.service_name }}</p>
+                        <p><button class="w3-button main-bg-color w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="w3-row-padding" style="margin-top:15px">
+        {% endif %}
+        {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+{% endblock  %}
+
+{% block questions %}
+    {% for title in title_list %}
+        <h3 {% if title.main_title %} style="text-align: center; padding-bottom: 10px" {% endif %}>{{ title.categ_name }}</h3>
+
+        {% for question in question_list %}
+            {% if title == question.title %}
+            {% if color %}
+                <button class="collapsible" style="background: {{ color.setting_value }};">{{ question.question_name }} </button>
+
+            {% else %}
+                <button class="collapsible">{{ question.question_name }} </button>
+
+                
+            {% endif %}
+
+            <div class="content">
+            {{ question.question_body|safe }}
+            </div>
+                
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+{% endblock questions %}

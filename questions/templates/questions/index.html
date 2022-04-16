@@ -1,0 +1,20 @@
+{% extends 'questions/base.html' %}
+{% comment %} {% extends 'questions/base.html' %} {% endcomment %}
+{% block content %}
+    {% for title in title_list %}
+        <h3>{{ title.categ_name }}</h3>
+
+        {% for question in question_list %}
+            {% if title == question.title %}
+
+            <button class="collapsible">{{ question.question_name }} </button>
+
+            <div class="content">
+            <p>{{ question.question_body }}</p>
+            </div>
+                
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+{% endblock content %}

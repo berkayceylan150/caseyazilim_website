@@ -1,0 +1,424 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/main.css' %}">
+    <link rel="stylesheet" id="css-preset" href="{% static 'index/css/presets/preset1.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/responsive.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="{% static 'index/images/logo.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'index/css/style-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/media-queries.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/my.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Yazılım</title>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+
+    <!--.preloader-->
+    <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+    <!--/.preloader-->
+  
+    <header id="home">
+      <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="item active" style="background-image: url({% static 'index/images/slider/1.jpg' %})">
+            <div class="caption">
+              <h1 class="animated fadeInLeftBig">Case Yazılıma <span>Hoşgeldiniz</span></h1>
+              <p class="animated fadeInRightBig">YAZILIM BİLİŞİM HİZMETLERİ - MOBİL UYGULAMA, WEBSİTESİ GELİŞTİRME</p>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Aşağıya İn</a>
+            </div>
+          </div>
+          <div class="item" style="background-image: url({% static 'index/images/slider/2.jpg' %})">
+            <div class="caption">
+              <h1 class="animated fadeInLeftBig">HERKESE UYGUN <span>ÇÖZÜMLER</span></h1>
+              <p class="animated fadeInRightBig">İSTERSENİZ PROFESYONEL İSTERSENİZ KİŞİSEL ÇÖZÜMLER İLE AKLINIZDAKİNE UYGUN BİR PROJEYİ ELDE EDİN</p>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Aşağıya İn</a>
+            </div>
+          </div>
+          <div class="item" style="background-image: url({% static 'index/images/slider/3.jpg' %})">
+            <div class="caption">
+              <h1 class="animated fadeInLeftBig">HAYALİNİZDEKİ <span>YAZILIM</span></h1>
+              <p class="animated fadeInRightBig">CASE İLE HAYALİNİZDEKİ YAZILIMI GERÇEĞE DÖNÜŞTÜRÜN.</p>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Aşağıya İn</a>
+            </div>
+          </div>
+        </div>
+        <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+  
+        <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+  
+      </div><!--/#home-slider-->
+      <div class="main-nav">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <h1><img class="img-responsive" width="50" src="{% static 'index/images/logo.png' %}" alt="logo"></h1>
+            </a>                    
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">                 
+              <li class="scroll"><a href="#home">Anasayfa</a></li>
+              {% block topli %}{% endblock topli %}
+              <li class="scroll"><a href="#about-us">Hakkımızda</a></li>                     
+              <li class="scroll"><a href="#portfolio">Projelerimiz</a></li>
+              <li class="scroll active"><a href="#frequently-asked-questions">S.S.S.</a></li>
+              <li class="scroll"><a href="#team">Ekibimiz</a></li>
+              <li class="scroll"><a href="#contact">İletişim</a></li>       
+            </ul>
+          </div>
+        </div>
+      </div><!--/#main-nav-->
+    </header><!--/#home-->
+    <section id="services">
+      <div class="container">
+        <div class="heading wow fadeInUp" style="padding: 0;" data-wow-duration="1000ms" data-wow-delay="300ms">
+          <div class="row">
+            <div class="text-center col-sm-8 col-sm-offset-2">
+              <h2>Hizmetlerimiz</h2>
+              
+            </div>
+          </div> 
+        </div>
+        <div class="text-center our-services">
+            {% block services %}
+              <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
+                <div class="service-icon">
+                  <i class="fa fa-info-circle"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Danışma/Destek</h3>
+                  <p>Eğer hayalinizdeki projeyi teknik açıdan toparlayamadıysanız veya bu konuda danışma hizmeti almak istiyorsanız yardım etmekten onur duyarız.</p>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="550ms">
+                <div class="service-icon">
+                  <i class="fa fa-cog"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Teknik Destek</h3>
+                  <p>İster daha önceden yaptırdığınız, ister bize yaptırmış olduğunuz çalışmada CASE size teknik destek sunmaktadır.</p>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="650ms">
+                <div class="service-icon">
+                  <i class="fa fa-mobile"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Mobil Uygulama Geliştirme</h3>
+                  <p>Aklınızdaki bir projeye göre isteğinize uygun bir mobil uygulamanın Backend ve Frontend'ini İOS ve Android için geliştirebilmekteyiz.</p>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
+                <div class="service-icon">
+                  <i class="fa fa-columns"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Website Geliştirme</h3>
+                  <p>İsteğinize uygun Web Sitesinin Frontend ve Backend'ini geliştirebilmekteyiz. </p>
+                  <br>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="service-icon">
+                  <i class="fa fa-paint-brush"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Profesyonel Tasarım</h3>
+                  <p>Tasarımlarınızı frontend uygulamara çevirebilir veya size ait yenilikçi tasarımlar oluşturabiliriz.</p>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
+                <div class="service-icon">
+                  <i class="fa fa-leanpub"></i>
+                </div>
+                <div class="service-info">
+                  <h3>Temiz Kod</h3>
+                  <p>Literatürdeki "Spagetti Kod" olarak geçen kirli kodlamadan uzak durarak size sunduğumuz hizmetlerde "Temiz Kod" felsefesine bağlı kalıyoruz.</p>
+                  <br>
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </section><!--/#services-->
+    <section id="about-us" class="parallax">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <h2>Hakkımızda</h2>
+              <p>Case Yazılım Olarak 2020'den itibaren genç ve dinamik bir ekiple hayallerinizdeki yazılımı gerçeğe dönüştürme amacı güdüyoruz.</p>
+              <p>Küçük çaplı bir şirket olmamızın verdiği serbestlik ile çalışanlarımız ile daha esnek bir süreç geçirebilmekteyiz.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <p class="lead">Kullanıcı Deneyimi</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
+                </div>
+              </div>
+              <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <p class="lead">Web Tasarım</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="85">85%</div>
+                </div>
+              </div>
+              <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <p class="lead">Frontend - Backend Programlama</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="95">95%</div>
+                </div>
+              </div>
+              <div class="single-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <p class="lead">Mobil Tasarım</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  aria-valuetransitiongoal="90">90%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!--/#about-us-->
+  
+    <div class="w3-container" id="portfolio">
+      <h3 class="w3-center">PROJELERİMİZ</h3>
+      <p class="w3-center ">Bu Zamana Kadar Yapmış Olduğumuz Projeler</p>
+      <div class="w3-row-padding" style="margin-top:64px">
+
+        {% block projects %}
+          <div class="w3-col l3 m6 w3-margin-bottom">
+              <div class="w3-card">
+                  <img src="./images/team/abdulhadi-edited.png" alt="Abdulhadi" style="width:100%">
+                  <div class="w3-container">
+                      <h3>Abdulhadi MORADİ</h3>
+                      <p class="w3-opacity">Biraysel / Kurumsal Danışman</p>
+                      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                      <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+              <div class="w3-card">
+                  <img src="./images/team/berkay.png" alt="Berkay" style="width:100%">
+                  <div class="w3-container">
+                      <h3>Berkay CEYLAN</h3>
+                      <p class="w3-opacity">Yazılım Uzmanı</p>
+                      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                      <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                  </div>
+              </div>
+          </div>
+        {% endblock  %}
+      </div>
+    </div>
+
+    <div id="frequently-asked-questions">
+      {% block questions %}
+        <h3>Frequently Asked Questions</h3>
+      
+        <button class="collapsible">Question </button>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quaerat nostrum voluptates atque, delectus corrupti totam ratione! Officia, incidunt numquam maiores quas explicabo exercitationem quaerat qui necessitatibus ullam, harum culpa?</p>
+        </div>
+      {% endblock questions %}
+    </div>
+    {% comment %} W3 EKİBİMİZ  {% endcomment %}
+    <div class="w3-container" id="team">
+      <h3 class="w3-center">EKİBİMİZ</h3>
+      <p class="w3-center ">Yenilikleri Takip Eden Bir Ekip İle Sizlere Hizmet Sunmaktayız.</p>
+      <div class="w3-row-padding" style="margin-top:64px">
+
+        {% block employees %}
+          <div class="w3-col l3 m6 w3-margin-bottom">
+              <div class="w3-card">
+                  <img src="./images/team/abdulhadi-edited.png" alt="Abdulhadi" style="width:100%">
+                  <div class="w3-container">
+                      <h3>Abdulhadi MORADİ</h3>
+                      <p class="w3-opacity">Biraysel / Kurumsal Danışman</p>
+                      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                      <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+              <div class="w3-card">
+                  <img src="./images/team/berkay.png" alt="Berkay" style="width:100%">
+                  <div class="w3-container">
+                      <h3>Berkay CEYLAN</h3>
+                      <p class="w3-opacity">Yazılım Uzmanı</p>
+                      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                      <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-info-circle"></i> Detaylı Bilgi</button></p>
+                  </div>
+              </div>
+          </div>
+        {% endblock  %}
+      </div>
+    </div>
+    <!--/#team-->
+  
+    
+    
+    <section id="features" class="parallax" style="margin-top: 30px; padding: 90px 0">
+      <div class="container">
+        <div class="row count">
+          <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <i class="fa fa-user"></i>
+            <h3 class="timer">18</h3>
+            <p>Memnun Müşteri</p>
+          </div>
+          <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+            <i class="fa fa-desktop"></i>
+            <h3 class="timer">8</h3>                    
+            <p>Modern Websitesi</p>
+          </div> 
+          <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="700ms">
+            <i class="fa fa-trophy"></i>
+            <h3 class="timer">10</h3>                    
+            <p>Mobil Uygulama</p>
+          </div> 
+          <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="900ms">
+            <i class="fa fa-comment-o"></i>                    
+            <h3>24/7</h3>
+            <p>Destek</p>
+          </div>                 
+        </div>
+      </div>
+    </section><!--/#features-->
+  
+  
+  
+    <section id="blog" style="height: 0; padding: 0px;"></section>
+  
+  
+  
+    <section id="contact">
+      <!--<div id="google-map" class="wow fadeIn" data-latitude="52.365629" data-longitude="4.871331" data-wow-duration="1000ms" data-wow-delay="400ms"></div>
+      -->
+        <div id="contact-us" class="parallax">
+        <div class="container">
+          <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <h2>İletişim</h2>
+              <p>7/24 İletişime Geçebilirsiniz</p>
+            </div>
+          </div>
+          <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+              <div class="col-sm-6">
+                <form name="contact-form" method="post" action="send-email/">
+                  {% csrf_token %}
+                  <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="İsim" required="required">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email Adresi" required="required">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="subject" class="form-control" placeholder="Konu" required="required">
+                  </div>
+                  <div class="form-group">
+                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mesaj" required="required"></textarea>
+                  </div>                        
+                  <div class="form-group">
+                    <button type="submit" class="btn-submit">Gönder</button>
+                  </div>
+                </form>   
+              </div>
+              <div class="col-sm-6">
+                <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                  <ul class="address">
+                    <li><i class="fa fa-map-marker"></i> <span> Adres:</span> Nilüfer, Bursa </li>
+                    <li><i class="fa fa-phone"></i> <span> Phone:</span> +90 538 270 6984  </li>
+                    <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:destek@caseyazilim.com">destek@caseyazilim.com</a></li>
+                    <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.caseyazilim.com</a></li>
+                  </ul>
+                </div>                            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>        
+    </section><!--/#contact-->
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 footer-about wow fadeInUp">
+              <img class="logo-footer" src="{% static 'index/images/cy-ana-logo-light.png' %} " alt="logo-footer" data-at2x="images/cy-ana-logo-light.png">
+              <p>
+                Case Yazılım Olarak 2020'den itibaren genç ve dinamik bir ekiple hayallerinizdeki yazılımı gerçeğe dönüştürüyoruz.
+              </p>
+              <div class="col-md-6 footer-copyright">
+              &copy; <a href="https://caseyazilim.com">Case Yazılım</a>
+            </div>
+            </div>
+            <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+              <h3>İletişim</h3>
+              <p><i class="fa fa-compass"></i> Akçalar Mah. Kaptan Sok. (660) No:20 Kat:1 Daire:3 Nilüfer / Bursa </p>
+              <p><i class="fa fa-phone"></i>Telefon: <a href="https://api.whatsapp.com/send?l=tr&phone=+905396504279">(90) 539 650 42 79</a></p>
+              <p><i class="fa fa-location-arrow"></i> Email: <a href="mailto:info@caseyazilim.com">info@caseyazilim.com</a></p>
+            </div>
+  
+            <div class="col-md-3 footer-links wow fadeInUp">
+              <h3>Bağlantılar</h3>
+  
+              <p><a href="https://caseyazilim.com/gizlilik.html">Gizlilik Politikamız</a> </p>
+              <p><a href="https://caseyazilim.com/kullanim_kosullari.html">Kullanım Koşulları</a> </p>
+              <p><a href="https://caseyazilim.com/destek.html">Destek</a> </p>
+              <p><a href="https://caseyazilim.com/sikca_sorulan_sorular.html">Sıkça Sorulan Sorular</a> </p>
+              <p><a href="https://caseyazilim.com/ozel_kurumsal_hizmet.html">Özel ve Kurumsal Hizmet</a></p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-icons" style="background-color: #333;margin: 0;padding-bottom:30px">
+              <ul>
+                <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="instagram" target="_blank" href="https://instagram.com/caseyazilim"><i class="fa fa-instagram"></i></a></li>
+                <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="facebook" href="https://www.facebook.com/Caseyaz%C4%B1l%C4%B1m-102123805684629"><i class="fa fa-facebook"></i></a></li>
+                <li><a style="color: white; background-color:rgba(0, 0, 0, .2)" class="linkedin" target="_blank" href="https://www.linkedin.com/company/case-yazilim"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+  
+            </div>
+  
+    </footer>
+  
+    <script type="text/javascript" src="{% static 'index/js/jquery.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="{% static 'index/js/jquery.inview.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/wow.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/mousescroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/smoothscroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/jquery.countTo.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/lightbox.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'index/js/main.js'%}"></script>
+  
+  </body>
+  </html>
