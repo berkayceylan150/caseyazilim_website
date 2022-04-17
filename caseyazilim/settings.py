@@ -141,9 +141,9 @@ MEDIA_URL = '/uploads/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'cp52.servername.co'
-EMAIL_HOST_USER = 'caseyazi1'
-EMAIL_HOST_PASSWORD = 'li8Q=VI#0sjt'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = False
 
